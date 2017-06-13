@@ -1,0 +1,48 @@
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Car</title>
+    <script type="text/javascript" src="/webiopi.js"></script>
+    <script type="text/javascript">
+    webiopi().ready(function() {
+        var button1 = webiopi().createMacroButton('fwd','forward','MoveForward');
+
+        // Append button to HTML element with ID="controls" using jQuery
+        $("#controls").append(button1);
+        //
+	var button2=webiopi().createMacroButton('bwd','backward','MoveBackward');
+        $("#controls").append(button2);
+        //
+        var button3=webiopi().createMacroButton('ryt','right','MoveRight');
+        $('#controls').append(button3);
+    	//
+	var button4=webiopi().createMacroButton('lft','left','MoveLeft');
+	$('#controls').append(button4);
+	//
+	var button5=webiopi().createMacroButton('stp','stop','Stop');
+	$('#controls').append(button5);
+
+        // Refresh GPIO buttons
+        // pass true to refresh repeatedly of false to refresh once
+                webiopi().refreshGPIO(true);
+    });
+
+    </script>
+    <style type="text/css">
+        button {
+            display: block;
+            margin: 5px 5px 5px 5px;
+            width: 160px;
+            height: 45px;
+            font-size: 24pt;
+            font-weight: bold;
+            color: white;
+        }
+
+    </style>
+</head>
+<body>
+    	<div id="controls" align="center">
+	</div>
+</body>
+</html>
